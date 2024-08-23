@@ -1,155 +1,155 @@
 #CORRECT SENTENCES
-
+ (0 0 0)
 #1 It is warm outside.
 
 # On street warm
 
-Na ulitse teplo. 
+Na ulitse teplo. (1 0 12)
 
 #2 She is lucky.
 
 # Her lucky
 
-Ey veset. 
+Ey veset. (1 0 8)
 
 #3 I am cold.
 
 # Me cold
 
-Mne kholodno. 
+Mne kholodno. (1 0.004 10)
 
 #4 I need to buy groceries.
 
 # Me needed to buy groceries.
 
-Mne nuzhno kupit produkty. 
+Mne nuzhno kupit produkty. (1 0 16)
 
 #5 One cannot smoke here.
 
 # Here one is not allowed to smoke.
 
-Zdes nelzya kurit. 
+Zdes nelzya kurit. (1 0 9)
 
 #6 There are many trees in the park.
 
 # In park a lot of trees.
 
-V parke mnogo derevyev. 
+V parke mnogo derevyev. (1 0 16)
 
 #7 There is a lot to do at work.
 
 # At work a lot of to-dos.
 
-Na rabote mnogo del. 
+Na rabote mnogo del. (1 0 16)
 
 #8 One forgot to warn her.
 
 # Her forgot to warn.
 
-Eye zabyli predupredit.
+Eye zabyli predupredit. (1 0 10)
 
 #9 One stole their car.
 
 # From them stole the car.
 
-U nikh ugnali mashinu. 
+U nikh ugnali mashinu. (1 0 16)
 
 #10 I have to go.
 
 # Me need to go
 
-Mne nuzhno idti. 
+Mne nuzhno idti. (1 0 10)
 
 #11 We cannot be late.
 
 # Us can not be late.
 
-Nam nelzya opazdyvat. 
+Nam nelzya opazdyvat. (1 0 10)
 
 #12 She had a surgery.
 
 # Her done surgery.
 
-Ey sdelali operatsiyu. 
+Ey sdelali operatsiyu. (1 0 14)
 
 #13 I was fired.
 
 # Me fired.
 
-Menya uvolili. 
+Menya uvolili. (1 0 8)
 
 #14 Strangers are not allowed here.
 
 # Here not allowed for strangers.
 
-Syuda nelzya postoronnim. 
+Syuda nelzya postoronnim. (1 0.004 13)
 
 #15 It is hard for us to agree on something.
 
 # Us difficult to agree.
 
-Nam slozhno dogovoritsya. 
+Nam slozhno dogovoritsya. (1 0 10)
 
 #16 One should talk softly in a library.
 
 # In library need to talk softly.
 
-V biblioteke nuzhno rasgovarivat tikho.
+V biblioteke nuzhno rasgovarivat tikho. (1 0.004 14)
 
 #17 He got bored.
 
 # Him became boring.
 
-Emu stalo skuchno.
+Emu stalo skuchno. (1 0 10)
 
 #18 You can get a dog.
 
 # You possible get a dog?
 
-Tebe mozhno zavesti sobaku?
+Tebe mozhno zavesti sobaku? (1 0.004 16)
 
 #19 He got his addmission tho the exam.
 
 # him admitted to exam.
 
-Ego dopustili k examenu. 
+Ego dopustili k examenu. (1 0 13)
 
 #20 One cannot start without him!
 
 # Without him cannot start!
 
-Bez nego nelzya nachinat!
+Bez nego nelzya nachinat! (1 0 12)
 
 # INCORRECT SENTENCES
 
 # Wrong verb form as it should infinite.
 
-Mne nuzhno pokupayet produkty.
+Mne nuzhno pokupayet produkty. (0 0 0)
 
-Ego mozhno sdelali.
+Ego mozhno sdelali. (0 0 0)
 
 # Wrong word order.
 
-Mnogo del rabote na.
+Mnogo del rabote na. (0 0 0)
 
-parke mnogo derevyev v.
+parke mnogo derevyev v. (0 0 0)
 
 # Missing entry in the lexicon.
 
-Nam legko dogovoritsya.
+Nam legko dogovoritsya. (0 0 0)
 
-Tebe nuzhno zavesti koshku.
+Tebe nuzhno zavesti koshku. (0 0 0)
 
 # Missing adverb in the VP
 
-V biblioteke rasgovarivat tikho.
+V biblioteke rasgovarivat tikho. (0 0 13)
 
 # Missing verb or VP
 
-Syuda postoronnim.
+Syuda postoronnim. (0 0 11)
 
 # Incomplete sentences
 
-opazdyvat
+opazdyvat (0 0 0)
 
-dopustili k examenu
+dopustili k examenu (0 0 0)

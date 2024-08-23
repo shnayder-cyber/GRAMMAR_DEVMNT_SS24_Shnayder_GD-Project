@@ -53,6 +53,7 @@ I first looked for or created myself the impersonal sentences to analyze their s
 ● Files you have submitted and their functions:
 - Shnayder_GD-Project_grammar – grammar file
 - Shnayder_GD-Project_testsuite – testsuite to test the grammar
+- Shnayder_GD-Project_testsuite_run - testsuite with the results 
 
 ● A link to your GitHub repository: 
 https://github.com/shnayder-cyber/GRAMMAR_DEVMNT_SS24_Shnayder_GD-Project
