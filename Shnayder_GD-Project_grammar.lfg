@@ -1,0 +1,282 @@
+"-*- mode: lfg; Encoding: utf-8 -*-"
+DEMO   RUSSIAN   CONFIG (1.0)
+  ROOTCAT   S.
+  FILES  .
+  LEXENTRIES   (DEMO RUSSIAN).
+  TEMPLATES (DEMO RUSSIAN). 
+  RULES   (DEMO RUSSIAN).
+  GOVERNABLERELATIONS    SUBJ OBJ OBJ2 COMP XCOMP OBL OBL-?+.
+  SEMANTICFUNCTIONS    ADJUNCT  TOPIC FOCUS POSS STANDARD.
+  NONDISTRIBUTIVES    NUM PERS CONJ-FORM.
+  EPSILON   e.
+  OPTIMALITYORDER NOGOOD.
+  CHARACTERENCODING utf-8.
+
+----
+
+DEMO   RUSSIAN   RULES (1.0)
+
+
+ROOT -->  
+ 	  { S
+ 	    (PERIOD: @(OT-MARK Punct))}. "prefer for generation" 
+
+"no canonical subject, the sentences start with PRON, PP or ADV"
+S --> { PP: @GF 
+	  | ADV: ! $ (^ ADJUNCT)} 
+	    (VP) "followed by optional VP or AP"
+		(AP)
+		({PERIOD | EXCL | QUESTION}).
+
+
+VP --> ({ V: (^VFORM) ~= inf; "the verb, if used, should be finite"
+		| ADV: ^=!}) "it could be also ADV as a part of VP (similar to AUX)"
+		(V: (! VFORM) =c inf) "followed by a non-finite verb"
+		({PP: (^ OBJECT) = ! "optional PP or NP"
+		| NP: (^ OBJECT) = !})       
+      	(ADV*: ! $ (^ ADJUNCT)). "optinal one or several ADVs as adjuncts" 
+		
+PP -->  (P: ^=!)
+ 	    {PRON: @GF "as OBJ-TH or OBJ2"
+		| N: ! $ (^ ADJUNCT) }. 
+
+AP --> A* : ! $ (^ OBJECT).
+
+NP --> N.
+----
+
+DEMO RUSSIAN TEMPLATES (1.0)
+
+
+PRED(P T) = (^ PRED) = 'P'
+			(^ TRANSLATION) = 'T'.
+
+GF = { (^ SUBJ) = ! 
+	| (^ OBJ) = ! 
+	| (^ OBJ-TH) = !}.
+
+P-GF = { ! $ (^ ADJUNCT)    "either adjunct or obl for PPs"  
+	  | (^ OBL) = !}.
+
+OT-MARK(_mark) = "assigns an OT mark, from common templates"
+       _mark $ o::*.
+
+VINF(P T) = (^ PRED) = 'P'
+       	    (^ TENSE) = pres
+	        (^ MOOD) = indicative
+			(^ VFORM) = inf
+			(^ TRANSLATION) = 'T'. 
+
+
+VPRES(P T) = (^ PRED) = 'P' 
+       	      (^ TENSE) = pres
+	          (^ MOOD) = indicative
+			  (^ TRANSLATION) = 'T'.
+
+VPAST(P T) = (^ PRED) = 'P' 
+       	    (^ TENSE) = past
+	        (^ MOOD) = indicative
+			(^ PERS) = 3
+			(^ NUM) = pl
+			(^ TRANSLATION) = 'T'.
+
+
+COMMON-NOUN(P N C T) =  (^PRED) = 'P'
+                         (^NUM) = N
+                         (^CASE) = C
+                         (^TRANSLATION) = 'T'.
+                         
+COMMON-ADJ(P N C T) =  (^PRED) = 'P'
+                         (^NUM) = N
+                         (^CASE) = C
+                         (^TRANSLATION) = 'T'.						 
+
+COMMON-PRON(P N PN C T) =  (^PRED) = 'P'
+                         (^ NUM) = N
+						 (^ PERSON) = PN
+                         (^ CASE) = C
+                         (^ TRANSLATION) = 'T'.
+
+
+----
+
+DEMO RUSSIAN LEXICON (1.0)
+
+"NOUNS"
+
+ulitse	N * @(COMMON-NOUN ulitsa sg Prepositional street).
+
+biblioteke	N * @(COMMON-NOUN biblioteka sg Prepositional library).
+
+produkty N * @(COMMON-NOUN produkty pl Accusative groceries).	
+
+parke	 N * @(COMMON-NOUN park sg Prepositional park).
+
+derevyev N * @(COMMON-NOUN derevya pl Genitive trees).
+
+rabote	N * @(COMMON-NOUN rabota sg Prepositional work).
+
+del 	N * @(COMMON-NOUN dela pl Genitive to-dos).	
+
+mashinu N * @(COMMON-NOUN mashina sg Accusative car).
+
+mashina N * @(COMMON-NOUN mashina sg Nominative car).
+
+opyta	N * @(COMMON-NOUN opyt sg Genitive experience).
+ 
+vremeni	N * @(COMMON-NOUN vremya sg Genitive time).
+
+rasgovory N * @(COMMON-NOUN rasgovory pl Accusative talks).
+
+let 	N * @(COMMON-NOUN gody pl Genitive years).
+
+operatsiyu N * @(COMMON-NOUN operatsiya sg Accusative surgery).
+
+postoronnim	N * @(COMMON-NOUN postrononniye pl Dative strangers).
+
+sobaku 	N * @(COMMON-NOUN sobaka sg Accusative dog).  
+
+examenu	N * @(COMMON-NOUN examen sg Dative exam).
+
+
+"VERBS"
+
+kupit	V * @(VINF kupit buy).
+
+kurit	V * @(VINF kurit smoke).
+
+idti 	V * @(VINF idti go).
+
+opazdyvat	V * @(VINF opazdyvat be-late).
+
+rasgovarivat	V * @(VINF rasgovarivat talk).
+
+dogovoritsya	V * @(VINF dogovoritsya agree).			
+
+nachinat	V * @(VINF nachinat begin).	
+
+predupredit V * @(VINF preduprezhdat warn).
+
+byt	V * @(VINF byt be).	
+
+zavesti V * @(VINF zavodit get).
+
+sdelali		V * @(VPAST sdelali they-did).
+
+uvolili		V * @(VPAST uvolili they-fired).
+       	          
+veset   V * @(VPRES vesti be-lucky).
+
+pokupayet V * @(VPRES pokupat buys).
+
+stalo 	V * (^ PRED) = 'stalo' 
+       	    (^ TENSE) = past
+	        (^ MOOD) = indicative
+			(^ TRANSLATION) = 'became'.
+
+zabyli		V * @(VPAST zabyli they-forgot).
+
+ugnali 		V * @(VPAST ugonyat they-stole).
+
+dopustili		V * @(VPAST dopuskat they-admitted).
+
+
+"ADVERBS"
+
+teplo	ADV * @(PRED teplo warm).
+
+tikho	ADV * @(PRED tikho quiet).
+
+kholodno ADV * @(PRED kholodno cold).
+
+nuzhno	ADV * @(PRED nuzhno one-needs-to).
+
+mozhno	ADV * @(PRED mozhno one-can).
+
+mnogo	ADV * @(PRED mnogo much-many).
+
+Mnogo	ADV * @(PRED mnogo much-many).
+
+nelzya	ADV * @(PRED nelzya one-can-not).
+
+Nelzya	ADV * @(PRED nelzya one-can-not).
+
+skuchno  ADV * @(PRED skuchno boring). 
+
+Zdes	ADV * @(PRED zdes here). 
+
+Syuda	ADV * @(PRED syuda here). 
+
+slozhno ADV * @(PRED slozhno difficult).
+
+
+
+"ADJECTIVES"
+
+takim A * @(COMMON-ADJ takoy sg Instrumental such).
+
+takom A * @(COMMON-ADJ takoy sg Prepositional such).
+
+zhestokim A * @(COMMON-ADJ zhestokiy sg Instrumental cruel).
+
+dannaya A * @(COMMON-ADJ dannyi sg Nominative this).
+
+ 
+"PRONOUNS"
+
+Mne		PRON * @(COMMON-PRON ya sg 1 Dative me).
+
+mne		PRON * @(COMMON-PRON ya sg 1 Dative me).
+
+Ey		PRON * @(COMMON-PRON ona sg 3 Dative her).
+
+ey		PRON * @(COMMON-PRON ona sg 3 Dative her).
+
+Eye 	PRON * @(COMMON-PRON ona sg 3 Accusative-Genitive her).
+
+Emu		PRON * @(COMMON-PRON on sg 3 Dative him).
+
+emu		PRON * @(COMMON-PRON on sg 3 Dative him).
+
+nego	PRON * @(COMMON-PRON on sg 3 Genitive he).
+
+nikh	PRON * @(COMMON-PRON oni pl 3 Genitive they).
+
+Nam		PRON * @(COMMON-PRON my pl 1 Dative us).
+
+menya	PRON * @(COMMON-PRON ya sg 1 Accusative-Genitive me).
+
+Menya	PRON * @(COMMON-PRON ya sg 1 Accusative-Genitive me).
+
+Tebe    PRON * @(COMMON-PRON ty sg 2 Dative you).
+
+Ego  	PRON * @(COMMON-PRON on sg 3 Accusative-Genitive him).
+
+nemu PRON * @(COMMON-PRON on sg 3 Dative he).
+
+
+"PREPOSITIONS"
+
+Na      P * { (^ PRED) = 'Na<(^ ADJUNCT)>'}.
+
+na      P * { (^ PRED) = 'Na<(^ ADJUNCT)>'}.
+
+V	 	P * { (^ PRED) = 'V<(^ ADJUNCT)>'}.
+
+v	 	P * { (^ PRED) = 'v<(^ ADJUNCT)>'}.		
+
+U		P * { (^ PRED) = 'U<(^ ADJUNCT)>'}.
+
+k 		P * { (^ PRED) = 'k<(^ ADJUNCT)>'}.
+
+Bez		P * { (^ PRED) = 'k<(^ ADJUNCT)>'}.
+
+"punctuation"
+
+. PERIOD * (^ STMT-TYPE) = declarative. 
+
+!  EXCL * (^ STMT-TYPE) = exclamation. 
+
+?  QUESTION * (^ STMT-TYPE) = question.
+
+----

@@ -1,0 +1,58 @@
+GRAMMAR DEVELOPMENT_SS2024_SHNAYDER_ANNA_GD-PROJECT
+
+SUBJECT: IMPERSONAL SENTENCES IN RUSSIAN
+
+In this grammar, I explored impersonal sentences in Russian, a common construction used to express weather conditions, emotional states, necessity, duty, and more. Impersonality in Russian is characterized by the absence of a canonical nominative case subject or an audible subject. Unlike English or German, which often use expletive subjects in corresponding structures, Russian impersonal sentences typically lack them as well.
+
+Here are some of the sentences from the grammar:
+
+1. Na ulitse teplo.
+P: Na  	N: ulitse	ADV: teplo
+P -> N (Prepositional case) -> ADV
+OBJ-TH> PRED
+On street warm.
+It’s warm outside.
+
+ 3. Mne kholodno.
+PRON: Mne 	ADV: kholodno
+PRON (Dative) -> ADV
+OBJ-TH-DAT -> PRED
+Me cold.
+I’m cold.
+
+4. Mne nuzhno kupit produkty.#
+PRON: Mne 	ADV: nuzhno (as AUX) 	V: kupit	N: produkty
+PRON -> ADV (AUX) -> V -> N (Accusative)
+OBJ-TH-DAT -> VP: ADV+V -> OBJ-ACC
+Me need buy groceries.
+I need to buy groceries.
+
+5. Zdes nelzya kurit.
+ADV: Zdes	ADV: nelzya (as AUX) 	V: kurit
+ADV -> ADV (AUX) -> V 
+ADV  -> PRED: ADV (AUX)+Vinf
+Here forbidden smoke.
+One cannot smoke here.
+
+In the above sentences, the agent is unknown. The experiencer, often represented by a pronoun, may take a Genitive, Dative, or Accusative case. Sometimes, the verb is absent either, and a predicative adverb describes a state of a person or weather, such as:
+Mne.PRON  kholodno.ADV ( I am cold).
+
+The nature of impersonal sentences in Russian remains a subject of discussion. There are various hypotheses about their true impersonality and the role of overt or non-canonical subjects like the Dative-case subject. While a detailed analysis of these discussions is beyond the scope of this project, I only tried to adapt phrase structure rules to parse some of the Russian impersonal sentences from my list in a very simplified yet meaningful way.
+
+● Reason for choosing this specific phenomenon?
+As a native Russian speaker, I was curious to see how XLE would handle any of the phenomena of the Russian language. I decided to test the impersonal sentences as they are specific to several Slavic languages, and Russian is full of them. Besides this, I saw it as a challenge as it would differ a bit from what we´ve learned during the course as we´ve concentrated on English sentence structure, mostly being a complete one.
+
+ ● Your implementation approach/design and the reasons for it (including the use of OT-marks and restriction operators)
+I first looked for or created myself the impersonal sentences to analyze their structure. With some guidance from Mark, I tried to treat them similarly to sentences with expletives. Through trial and error, I created my own, very simplified, phrase structure rules that allowed XLE to parse these sentences successfully, though the grammar remains less robust than I would like it to be due to its numerous options. I was unable to implement OT-marks or many constraints, as they didn´t really work and would require a lot more time to be implemented.   
+
+● The challenges that remain
+- Word order Impersonal sentences, like many Russian sentences, exhibit free word order. It is literally possible shuffle every part of the sentence from my list from left to the right and it would still make sense, with some contextual changes though. So, it would be great to expand the grammar to handle this as well.
+- Grammatical agreement: For my grammar, I created a separate lexicon entry for every inflected form a noun, pronoun, verb etc. Considering Russian is a highly inflected language, it would be also great to extend the grammar so it can more gracefully handle different word forms.
+- Constraints: Additional constraints are needed to rule out ungrammatical sentences that may still be parsed with the current grammar (I wasn´t able to test all the sentences which might be created with the lexicon available).
+
+● Files you have submitted and their functions:
+- Shnayder_GD-Project_grammar – grammar file
+- Shnayder_GD-Project_testsuite – testsuite to test the grammar
+
+● A link to your GitHub repository: 
+https://github.com/shnayder-cyber/GRAMMAR_DEVMNT_SS24_Shnayder_GD-Project
